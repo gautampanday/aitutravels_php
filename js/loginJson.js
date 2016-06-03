@@ -1,5 +1,6 @@
 $(document).ready(function() {
     console.log( "ready!" );
+    alert("hi");
     $('#formSubmit').on('submit', function(){
     var that=$(this),
         contents=that.serialize();
@@ -16,6 +17,6 @@ $(document).ready(function() {
                     console.log('username will'+ data.username + "password will"+data.password);
                }
             });
-            return true;
+            return false;
 });
 });

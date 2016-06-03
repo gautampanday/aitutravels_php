@@ -2,7 +2,7 @@
     <div class="row">
       <div class="right_block">
         <div class="row">
-            <form class="col-md-12 col-sm-12 col-xs-12" action="adminLoginProcess.php" name="form" method="post" ng-submit="login()" autocomplete="off">
+            <form class="col-md-12 col-sm-12 col-xs-12" action="adminLoginProces.php" name="form" method="post" ng-submit="login()" autocomplete="off">
             <h2 class="signup-heading">Signin</h2>
             <div class="row">
               <div class="input-field col-md-12 col-sm-12 col-xs-12">
@@ -21,6 +21,7 @@
           </form>
         </div> 
           <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+          <script type="text/javascript" src="js/loginJson.js"> </script>
       </div>
     </div>
   </div>
