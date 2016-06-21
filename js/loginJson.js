@@ -1,22 +1,31 @@
 $(document).ready(function() {
-    console.log( "ready!" );
-    alert("hi");
-    $('#formSubmit').on('submit', function(){
-    var that=$(this),
-        contents=that.serialize();
-        
+ $('#formSubmit').on('submit', function(){
+        var Username=$('#icon_prefix-2').val();
+        var Password=$('#icon_prefix-3').val();
+        var Success=false;
+        var text='{"usr1":"", "pass1":""}';
+        var objct=JSON.parse(text);
+        objct.usr1=Username;
+        objct.pass1=Password;
             $.ajax({
-               url: 'test.php',
+               url: 'adminLoginProcess.php',
                dataType: 'json',
-               type: 'post',
-               data: contents,
-               success:function(data){
-                alert('hello');
-                   console.log('hello'+data);
-                   console.log('hel'+ that);
-                    console.log('username will'+ data.username + "password will"+data.password);
-               }
+               type: 'POST',
+               data: objct,
+               success: function(data){
+                   alert(data.result);
+                  // console.log(data);
+                    //     console.log('hel'+data.result);
+                          Success=true;
+                         if(data.succes)
+                             window.location.href = 'sidebar.php';
+               },
+               error: function(xhr, textStatus, errorThrown) {
+                 // Handle error
+                //alert('heyyyo');
+                Success = false;
+  }
             });
-            return false;
+            return Success;
 });
 });
